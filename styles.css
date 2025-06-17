@@ -1,1 +1,60 @@
-/*  your css code here. If applicable */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.progress-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.circle {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.circle.active {
+    background-color: #4caf50;
+    border-color: #4caf50;
+}
+
+.progress-line {
+    position: absolute;
+    height: 2px;
+    background-color: #4caf50;
+    top: 19px; /* Center the line vertically */
+    left: 50px; /* Start position */
+    width: calc(100% - 100px); /* Adjust width */
+    z-index: -1; /* Behind the circles */
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
