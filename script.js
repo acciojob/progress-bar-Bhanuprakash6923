@@ -32,4 +32,3 @@ function updateProgress() {
     const activeCircles = document.querySelectorAll('.circle.active').length;
     progressLine.style.width = `${(activeCircles - 1) * 100 / (circles.length - 1)}%`;
 }
-
