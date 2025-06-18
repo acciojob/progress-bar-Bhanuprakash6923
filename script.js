@@ -5,13 +5,17 @@ const prevButton = document.getElementById('prev');
 let currentActive = 0;
 
 nextButton.addEventListener('click', () => {
-    currentActive++;
-    updateProgress();
+    if (currentActive < circles.length - 1) {
+        currentActive++;
+        updateProgress();
+    }
 });
 
 prevButton.addEventListener('click', () => {
-    currentActive--;
-    updateProgress();
+    if (currentActive > 0) {
+        currentActive--;
+        updateProgress();
+    }
 });
 
 function updateProgress() {
@@ -25,7 +29,7 @@ function updateProgress() {
 
     // Enable/disable buttons based on currentActive
     prevButton.disabled = currentActive === 0;
-    nextButton.disabled = currentActive === circles.length;
+    nextButton.disabled = currentActive === circles.length - 1;
 
     // Update the progress line width
     const progressLine = document.querySelector('.progress-line');
